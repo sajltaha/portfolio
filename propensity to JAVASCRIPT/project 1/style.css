@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.search{
+    padding: 20px 0 20px 0;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    margin: 0 auto;
+}
+.search__slct{
+    margin: 20px 0 0 0;
+}
+.search__btn{
+    margin: 20px 0 0 0;
+}
+.search__btn:hover{
+    cursor: pointer;
+}
+.container{
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid black;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.container__inner{
+    text-align: center;
+}
+.colorly{
+    color: orange;
+    font-style: italic;
+}

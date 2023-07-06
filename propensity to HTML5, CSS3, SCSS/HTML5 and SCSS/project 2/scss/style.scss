@@ -1,0 +1,673 @@
+@import 'reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+$ff: 'Montserrat', sans-serif;
+$box-sh: 0px 13px 19px rgba(0, 0, 0, 0.07);
+$bg-line: linear-gradient(180deg, rgba(0, 0, 0, 0) 14.58%, rgba(56, 56, 56, 0.84) 100%);
+
+@mixin flex($disp, $fflow, $jc, $ai){
+	display: $disp;
+	flex-flow: $fflow;
+	justify-content: $jc;
+	align-items: $ai;
+}
+@mixin text($fwt, $fsz, $lh, $lspc, $clr, $wd){
+	font-weight: $fwt;
+	font-size: $fsz;
+	line-height: $lh;
+	letter-spacing: $lspc;
+	color: $clr;
+	width: $wd;
+}
+@mixin page($maxw, $mg, $bgc){
+	max-width: $maxw;
+	margin: $mg;
+	background-color: $bgc;
+}
+@mixin block($wd, $ht, $brdr, $brdr-r, $bgc){
+	width: $wd;
+	height: $ht;
+	border: $brdr;
+	border-radius: $brdr-r;
+	background-color: $bgc;
+}
+@mixin indent($mg, $pd){
+	margin: $mg;
+	padding: $pd;
+}
+
+body{
+	font-family: $ff;
+	header{
+		@include page(1440px, 0 auto, none);
+		@include indent(none, 184px 0 0 197px);
+		background: url(../img/background.jpg) no-repeat, #fafafa;
+		.header__content-mid{
+			@include block(509px, 338px, none, none, none);
+			@include flex(flex, column, space-between, none);
+			.header__content-mid__ttl p{
+				@include text(800, 58px, 80px, 0.2px, #252B42, 509px);
+			}
+			.header__content-mid__subttl p{
+				@include text(500, 20px, 30px, 0.2px, #737373, 376px);
+			}
+			.header__content-mid__buttons{
+				@include block(349px, 48px, none, none, none);
+				@include flex(flex, row, space-between, none);
+				.header__content-mid__buttons__buttonF{
+					@include block(185px, 48px, none, 37px, #FFA62B);
+					@include flex(flex, row, center, center);
+					p{
+						@include text(700, 14px, 28px, 0.2px, #fff, none);
+					}
+				}
+				.header__content-mid__buttons__buttonS{
+					@include block(154px, 48px, 1px solid #00A0C1, 37px, rgba(0, 0, 0, 0));
+					@include flex(flex, row, center, center);
+					p{
+						@include text(700, 14px, 28px, 0.2px, #00A0C1, none);
+					}
+				}
+			}
+		}
+		.header__content-bot{
+			@include block(1046px, 290px, none, none, none);
+			@include indent(80px 0 0 0, 0);
+			@include flex(flex, row, space-between, none);
+			.header__content-bot__card-tp1{
+				box-shadow: $box-sh;
+				@include block(328px, 210px, none, none, #fff);
+				@include indent(0, 35px 0 35px 40px);
+				@include flex(flex, column, space-between, none);
+				.header__content-bot__card-tp1__ttl-tp1 p{
+					@include text(700, 24px, 32px, 0.1px, #252B42, none);
+				}
+				.header__content-bot__card-tp1__subttl-tp1 p{
+					@include text(500, 14px, 20px, 0.2px, #737373, 217px);
+				}
+				.header__content-bot__card-tp1__subttl-tp2{
+					@include text(500, 14px, 20px, 0.2px, #737373, 224px);	
+				}
+			}
+			.header__content-bot__card-tp2{
+				box-shadow: $box-sh;
+				@include block(328px, 210px, none, none, #00A0C1);
+				@include indent(0, 35px 0 35px 40px);
+				@include flex(flex, column, space-between, none);
+				.header__content-bot__card-tp2__ttl-tp1 p{
+					@include text(700, 24px, 32px, 0.1px, #fff, none);
+				}
+				.header__content-bot__card-tp2__subttl-tp1 p{
+					@include text(500, 14px, 20px, 0.2px, #fff, 213px);
+				}
+			}
+		}
+		@media (max-width: 414px) {
+			@include indent(none, 84px 0 0 0);
+			@include flex(flex, column, none, center);
+			background: url(../img/cover.jpg) no-repeat;
+			background-position-y: -500px;
+			height: 1490px;
+			.header__content-mid{
+				@include flex(flex, column, space-between, center);
+				@include block(414px, 435px, none, none, none);
+				text-align: center;
+				.header__content-mid__ttl p{
+					@include text(700, 40px, 57px, 0.2px, #252B42, 346px);
+				}
+				.header__content-mid__subttl p{
+					@include text(500, 20px, 30px, 0.2px, #737373, 279px);
+				}
+				.header__content-mid__buttons{
+					@include block(187px, 121px, none, none, none);
+					@include flex(flex, column, space-between, center);
+				}
+			}
+			.header__content-bot{
+				@include block(328px, 690px, none, none, none);
+				@include flex(flex, column, space-between, none);
+			}
+		}
+	}
+	.choose{
+		@include page(1440px, 0 auto, #fafafa);
+		@include indent(none, 80px 0);
+		@include flex(flex, column, none, center);
+		.choose__text{
+			@include block(511px, 107px, none, none, none);
+			@include flex(flex, column, space-between, center);
+			text-align: center;
+			.choose__text__ttl p{
+				@include text(700, 40px, 57px, 0.2px, #252B42, none);
+			}
+			.choose__text__subttl p{
+				@include text(500, 14px, 20px, 0.2px, #737373, 511px);
+			}
+		}
+		.choose__content{
+			@include block(1049px, 209px, none, none, none);
+			@include flex(flex, row, space-between, none);
+			@include indent(50px 0 0 0, 0);
+			.choose__content__card{
+				@include block(230px, 209px, none, none, #fff);
+				@include indent(none, 30px 0);
+				@include flex(flex, column, space-between, center);
+				.choose__content__card__ttl p{
+					@include text(700, 40px, 57px, 0.2px, #252B42, none);
+				}
+				.choose__content__card__subttl p{
+					@include text(700, 16px, 24px, 0.1px, #737373, none);
+				}
+			}
+		}
+		@media (max-width: 414px) {
+			@include indent(none, 98px 0 70px 0);
+			.choose__text{
+				@include block(330px, 204px, none, none, none);
+				.choose__text__ttl p{
+					@include text(700, 40px, 57px, 0.2px, #252B42, 252px);
+				}
+				.choose__text__subttl p{
+					@include text(500, 14px, 20px, 0.2px, #737373, 225px);
+				}
+			}
+			.choose__content{
+				@include block(230px, 974px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				@include indent(75px 0 0 0, 0);
+			}
+		}
+	}
+	.advice{
+		@include page(1440px, 0 auto, #fafafa);
+		@include indent(none, 125px 0 80px 0);
+		@include flex(flex, column, none, center);
+		.advice__text{
+			@include block(470px, 107px, none, none, none);
+			@include flex(flex, column, space-between, center);
+			text-align: center;
+			.advice__text__ttl p{
+				@include text(700, 40px, 57px, 0.2px, #252B42, none);
+			}
+			.advice__text__subttl p{
+				@include text(500, 14px, 20px, 0.2px, #737373, none);
+			}
+		}
+		.advice__content{
+			@include block(1040px, 342px, none, none, none);
+			@include flex(flex, row, space-between, none);
+			@include indent(45px 0 0 0, 0);
+			.advice__content__card{
+				@include block(230px, 342px, none, none, #fff);
+				@include flex(flex, column, space-between, none);
+				.advice__content__card__text-bl{
+					@include block(230px, 203px, none, none, none);
+					@include indent(0, 30px);
+					.advice__content__card__text-bl__ttl-one p{
+						@include text(700, 16px, 24px, 0.1px, #252B42, 135px);
+					}
+					.advice__content__card__text-bl__subttl-one p{
+						@include text(500, 14px, 20px, 0.2px, #737373, 160px);
+						@include indent(0, 15px 0 0 0);
+					}
+					.advice__content__card__text-bl__ttl-two p{
+						@include text(700, 16px, 24px, 0.1px, #252B42, 127px);
+					}
+					.advice__content__card__text-bl__subttl-two p{
+						@include text(500, 14px, 20px, 0.2px, #737373, 177px);
+						@include indent(0, 15px 0 0 0);
+					}
+					.advice__content__card__text-bl__ttl-three p{
+						@include text(700, 16px, 24px, 0.1px, #252B42, 108px);
+					}
+					.advice__content__card__text-bl__subttl-three p{
+						@include text(500, 14px, 20px, 0.2px, #737373, 165px);
+						@include indent(0, 15px 0 0 0);
+					}
+					.advice__content__card__text-bl__subttl-four p{
+						@include text(500, 14px, 20px, 0.2px, #737373, 179px);
+						@include indent(0, 15px 0 0 0);
+					}
+				}
+				.advice__content__card__img{
+					@include block(230px, 138px, none, none, none);
+					@include flex(flex, row,center, center);
+				}
+			}
+		}
+		@media (max-width: 414px) {
+			@include indent(none, 98px 0 106px 0);
+			.advice__text{
+				@include block(330px, 204px, none, none, none);
+				.advice__text__ttl p{
+					@include text(700, 40px, 57px, 0.2px, #252B42, 185px);
+				}
+				.advice__text__subttl p{
+					@include text(500, 14px, 20px, 0.2px, #737373, 225px);
+				}
+			}
+			.advice__content{
+				@include block(230px, 1415px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				@include indent(75px 0 0 0, 0);
+			}
+		}
+	}
+	.service{
+		@include page(1440px, 0 auto, #fff);
+		@include indent(none, 100px 0);
+		@include flex(flex, column, none, center);
+		.service__text{
+			@include block(515px, 169px, none, none, none);
+			@include flex(flex, column, space-between, center);
+			text-align: center;
+			.service__text__ttl p{
+				@include text(700, 40px, 57px, 0.2px, #252B42, 515px);
+			}
+			.service__text__suttl p{
+				@include text(500, 14px, 20px, 0.2px, #737373, 511px);
+			}
+		}
+		.service__content{
+			@include indent(100px 0 0 0, 0);
+			@include block(1052px, 442px, none, none, none);
+			@include flex(flex, row, space-between, none);
+			.service__content__left-img{
+				@include block(597px, 442px, none, none, none);
+				background: url(../img/cover1.jpg) no-repeat;
+				.service__content__left-img__blur{
+					@include block(597px, 442px, none, none, none);
+					@include flex(flex, row, center, center);
+					background: $bg-line;
+				}
+			}
+			.service__content__right{
+				@include block(333px, 442px, none, none, none);
+				@include indent(none, 20px 0 4px 0);
+				@include flex(flex, column, space-between, none);
+				.service__content__right__top{
+					@include block(333px, 184px, none, none, none);
+					@include flex(flex, column, space-between, none);
+					.service__content__right__top__ttl p{
+						@include text(700, 40px, 57px, 0.2px, #252B42, none);
+					}
+					.service__content__right__top__subttl p{
+						@include text(500, 14px, 20px, 0.2px, #737373, 330px);
+					}
+				}
+				.service__content__right__bot{
+					@include block(333px, 184px, none, none, none);
+					@include flex(flex, column, space-between, none);
+					.service__content__right__bot__block{
+						@include block(333px, 77px, none, none, none);
+						@include flex(flex, row, space-between, none);
+						.service__content__right__bot__block__txt{
+							@include block(286px, 77px, none, none, none);
+							@include flex(flex, column, space-between, none);
+							.service__content__right__bot__block__txt__ttl p{
+								@include text(700, 16px, 24px, 0.1px, #252B42, none);
+							}
+							.service__content__right__bot__block__txt__subttl p{
+								@include text(600, 14px, 24px, 0.2px, #737373, none);
+							}
+						}
+					}
+				}
+			}	
+		}
+		@media (max-width: 414px) {
+			.service__text{
+				@include block(324px, 261px, none, none, none);
+				.service__text__ttl p{
+					@include text(700, 35px, 57px, 0.2px, #252B42, 308px);
+				}
+				.service__text__suttl p{
+					@include text(500, 14px, 20px, 0.2px, #737373, 225px);
+				}
+			}
+			.service__content{
+				@include block(333px, 932px, none, none, none);
+				@include flex(flex, column, space-between, center);
+				.service__content__left-img{
+					@include block(329px, 442px, none, none, none);
+					background: url(../img/cover2.jpg) no-repeat;
+					.service__content__left-img__blur{
+						@include block(329px, 442px, none, none, none);
+					}
+				}
+			}
+		}
+	}
+	.brands{
+		@include page(1440px, 0 auto, none);
+		@include flex(flex, column, none, center);
+		.brands__silver{
+			@include block(1440px, 262px, none, none, #fafafa);
+			@include flex(flex, row, center, none);
+			.brands__silver__content{
+				@include block(1001px, 175px, none, none, none);
+				@include flex(flex, row, space-between, center);
+				.brands__silver__content__img-h{
+					@include block(103px, 34px, none, none, none);
+					background: url(../img/fa-brands_hooli.svg);
+				}
+				.brands__silver__content__img-l{
+					@include block(83px, 59px, none, none, none);
+					background: url(../img/fa-brands_lyft.svg);
+				}
+				.brands__silver__content__img-p{
+					@include block(102px, 75px, none, none, none);
+					background: url(../img/fa-brands_pied-piper-hat.svg);
+				}
+				.brands__silver__content__img-s{
+					@include block(103px, 42px, none, none, none);
+					background: url(../img/fa-brands_stripe.svg);
+				}
+				.brands__silver__content__img-a{
+					@include block(104px, 62px, none, none, none);
+					background: url(../img/fa-brands_aws.svg);
+				}
+				.brands__silver__content__img-r{
+					@include block(76px, 72px, none, none, none);
+					background: url(../img/fa-brands_reddit-alien.svg);
+				}
+			}
+		}
+		.brands__dblue{
+			@include block(1440px, 77px, none, none, #252B42);
+		}
+		.brands__form{
+			@include block(986px, 124px, none, 2px, #16697A);
+			@include indent(-144px 0 0 0, 30px 48px 30px 50px);
+			@include flex(flex, row, space-between, center);
+			.brands__form__text p{
+				@include text(700, 24px, 32px, 0.1px, #FFFFFF, 266px);
+			}
+			.brands__form__inbt{
+				@include block(450px, 58px, none, none, none);
+				@include flex(flex, row, none, center);
+				input{
+					@include block(333px, 58px, 1px solid #E6E6E6, 5px 0 0 5px, #F9F9F9);
+					border-right: none;
+					@include indent(none, 15px 20px);
+					@include text(400, 14px, 28px, 0.2px, #737373, none);
+				}
+				::placeholder{
+					@include text(400, 14px, 28px, 0.2px, #737373, none);
+				}
+				button{
+					@include block(117px, 58px, 1px solid #E6E6E6, 0 5px 5px 0, #FFA62B);
+					p{
+						@include text(400, 14px, 28px, 0.2px, #fff, none);
+					}
+				}
+			}
+		}
+		@media (max-width: 414px) {
+			.brands__silver{
+				@include block(414px, 1018px, none, none, #fafafa);
+				@include flex(flex, row, center, none);
+				@include indent(none, 81px 0 0 0);
+				.brands__silver__content{
+					@include block(153px, 852px, none, none, none);
+					@include flex(flex, column, space-between, center);
+					.brands__silver__content__img-h{
+						@include block(149px, 50px, none, none, none);
+						background: url(../img/fa-brands_reddit-alien6.svg);
+					}
+					.brands__silver__content__img-l{
+						@include block(139px, 99px, none, none, none);
+						background: url(../img/fa-brands_reddit-alien5.svg);
+					}
+					.brands__silver__content__img-p{
+						@include block(149px, 109px, none, none, none);
+						background: url(../img/fa-brands_reddit-alien4.svg);
+					}
+					.brands__silver__content__img-s{
+						@include block(149px, 60px, none, none, none);
+						background: url(../img/fa-brands_reddit-alien3.svg);
+					}
+					.brands__silver__content__img-a{
+						@include block(153px, 92px, none, none, none);
+						background: url(../img/fa-brands_reddit-alien2.svg);
+					}
+					.brands__silver__content__img-r{
+						@include block(149px, 142px, none, none, none);
+						background: url(../img/fa-brands_reddit-alien1.svg);
+					}
+				}
+			}
+			.brands__dblue{
+				@include block(0, 0, none, none, none);
+			}
+			.brands__form{
+				@include block(414px, 212px, none, none, #16697A);
+				@include indent(0, 30px 0);
+				@include flex(flex, column, space-between, center);
+				.brands__form__text p{
+					@include text(700, 24px, 32px, 0.1px, #FFFFFF, 266px);
+					text-align: center;
+				}
+				.brands__form__inbt{
+					@include block(337px, 58px, none, none, none);
+					input{
+						@include block(220px, 58px, 1px solid #E6E6E6, 5px 0 0 5px, #F9F9F9);
+					}
+				}
+			}
+		}
+	}
+	.touch{
+		@include page(1440px, 0 auto, #fafafa);
+		@include indent(none, 80px 0 148px 0);
+		@include flex(flex, column, none, center);
+		.touch__text{
+			@include block(470px, 107px, none, none, none);
+			@include flex(flex, column, space-between, center);
+			text-align: center;
+			.touch__text__ttl p{
+				@include text(700, 40px, 57px, 0.2px, #252B42, none);
+			}
+			.touch__text__subttl p{
+				@include text(500, 14px, 20px, 0.2px, #737373, none);
+			}
+		}
+		.touch__content{
+			@include indent(80px 0 0 0, none);
+			@include block(982px, 393px, none, none, none);
+			@include flex(flex, row, none, center);
+			.touch__content__card-tp1{
+				@include block(327px, 333px, none, none, #fff);
+				@include indent(none, 50px 40px);
+				@include flex(flex, column, space-between, center);
+				.touch__content__card-tp1__img{
+					@include block(72px, 72px, none, none, none);
+					@include flex(flex, row, center, flex-end);
+				}
+				.touch__content__card-tp1__email{
+					@include block(221px, 48px, none, none, none);
+					@include flex(flex, column, space-between, center);
+					p{
+						@include text(600, 14px, 24px, 0.2px, #252B42, none);
+					}
+				}
+				.touch__content__card-tp1__ttl p{
+					@include text(700, 16px, 24px, 0.1px, #252B42, none);
+				}
+				button{
+					@include block(160px, 44px, 1px solid #FFA62B, 5px, rgba(0,0,0,0));
+					p{
+						@include text(600, 14px, 24px, 0.2px, #FFA62B, none);
+					}
+				}
+			}
+			.touch__content__card-tp2{
+				@include block(328px, 393px, none, none, #252B42);
+				@include indent(none, 80px 40px);
+				@include flex(flex, column, space-between, center);
+				.touch__content__card-tp2__img{
+					@include block(72px, 72px, none, none, none);
+					@include flex(flex, row, center, flex-end);
+				}
+				.touch__content__card-tp2__email{
+					@include block(221px, 48px, none, none, none);
+					@include flex(flex, column, space-between, center);
+					p{
+						@include text(600, 14px, 24px, 0.2px, #fff, none);
+					}
+				}
+				.touch__content__card-tp2__ttl p{
+					@include text(700, 16px, 24px, 0.1px, #fff, none);
+				}
+				button{
+					@include block(160px, 44px, 1px solid #fff, 5px, rgba(0,0,0,0));
+					p{
+						@include text(600, 14px, 24px, 0.2px, #fff, none);
+					}
+				}
+			}
+		}
+		@media (max-width: 414px) {
+			@include indent(none, 75px 0 130px 0);
+			.touch__text{
+				@include block(280px, 147px, none, none, none);
+				.touch__text__subttl p{
+					@include text(700, 14px, 20px, 0.2px, #737373, 264px);
+				}
+			}
+			.touch__content{
+				@include indent(60px 0 0 0, none);
+				@include block(327px, 1119px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				.touch__content__card-tp2{
+					@include block(327px, 333px, none, none, #252B42);
+					@include indent(none, 50px 40px);
+				}
+			}
+		}
+	}
+	.agency{
+		@include page(1440px, 0 auto, #fff);
+		@include indent(none, 40px 0);
+		@include flex(flex, row, center, none);
+		.agency__content{
+			@include block(1012px, 62px, none, none, none);
+			@include flex(flex, row, space-between, center);
+			.agency__content__text{
+				@include block(480px, 62px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				.agency__content__text__ttl p{
+					@include text(700, 24px, 32px, 0.2px, #252B42, none);
+				}
+				.agency__content__text__subttl p{
+					@include text(500, 14px, 20px, 0.2px, #737373, none);
+				}
+			}
+			button{
+				@include block(160px, 58px, none, 5px, #FFA62B);
+				p{
+					@include text(700, 14px, 28px, 0.2px, #FFFFFF, none);
+				}
+			}
+		}
+		@media (max-width: 414px) {
+			.agency__content{
+				@include block(239px, 222px, none, none, none);
+				@include flex(flex, column, space-between, flex-start);
+				.agency__content__text{
+					@include block(239px, 114px, none, none, none);
+					.agency__content__text__ttl p{
+						@include text(700, 23px, 32px, 0.2px, #252B42, none);
+					}
+					.agency__content__text__subttl p{
+						@include text(500, 14px, 20px, 0.2px, #737373, 184px);
+					}
+				}
+			}
+		}
+	}
+	footer{
+		@include page(1440px, 0 auto, none);
+		@include flex(flex, column, none, center);
+		.footer__mid{
+			@include block(1440px, 272px, none, none, #16697A);
+			@include flex(flex, row, center, center);
+			.footer__mid__content{
+				@include block(1050px, 170px, none, none, none);
+				@include flex(flex, row, space-between, none);
+				.col-sz1{
+					@include block(148px, 170px, none, none, none);
+				}
+				.col-sz2{
+					@include block(152px, 170px, none, none, none);	
+				}
+				.footer__mid__content__col{
+					@include flex(flex, column, space-between, none);
+					.footer__mid__content__col__ttl p{
+						@include text(700, 16px, 24px, 0.1px, #FFFFFF, none);
+					}
+					.footer__mid__content__col__links{
+						@include block(100%, 126px, none, none, none);
+						@include flex(flex, column, space-between, none);
+						a{
+							@include text(600, 14px, 24px, 0.2px, #FFFFFF, none);
+						}
+					}
+				}
+				.footer__mid__content__colS{
+					@include block(239px, 153px, none, none, none);
+					@include flex(flex, column, space-between, none);
+					.footer__mid__content__colS__ttl p{
+						@include text(700, 16px, 24px, 0.1px, #fff, none);
+					}
+					.footer__mid__content__colS__ttl__links{
+						@include block(100%, 109px, none, none, none);
+						@include flex(flex, column, space-between, none);
+						.footer__mid__content__colS__ttl__links__bl{
+							@include block(239px, 30px, none, none, none);
+							@include flex(flex, row, none, center);
+							.footer__mid__content__colS__ttl__links__bl__img{
+								@include block(34px, 30px, none, none, none);
+								@include flex(flex, row, none, center);
+							}
+							a{
+								@include text(600, 14px, 24px, 0.2px, #FFFFFF, none);
+							}
+						}
+					}
+				}
+			}
+		}
+		.footer__bot{
+			@include block(1440px, 74px, none, none, #fff);
+			@include flex(flex, row, center, center);
+			.footer__bot__cont{
+				@include block(1009px, 24px, none, none, none);
+				@include flex(flex, row, space-between, center);
+				.footer__bot__cont__txt p{
+					@include text(600, 14px, 24px, 0.2px, #737373, none);
+				}
+				.footer__bot__cont__icons{
+					@include block(156px, 24px, none, none, none);
+					@include flex(flex, row, space-between, center);
+				}
+			}
+		}
+		@media (max-width: 414px) {
+			.footer__mid{
+				@include block(414px, 1063px, none, none, #16697A);
+				.footer__mid__content{
+					@include block(239px, 953px, none, none, none);
+					@include flex(flex, column, space-between, none);
+				}
+			}
+			.footer__bot{
+				@include block(414px, 172px, none, none, #fff);
+				.footer__bot__cont{
+					@include block(236px, 122px, none, none, none);
+					@include flex(flex, column, space-between, flex-start);
+				}
+			}
+		}
+	}
+}

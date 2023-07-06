@@ -1,0 +1,1460 @@
+@import 'reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lexend:wght@400;500&display=swap');
+
+$ffA: 'Inter', sans-serif;
+$ffB: 'Lexend', sans-serif;
+$b-sh: 0px 20px 25px -5px rgba(0, 0, 0, 0.1), 0px 10px 10px rgba(0, 0, 0, 0.04);
+
+@mixin page($maxw, $mg, $bg){
+	max-width: $maxw;
+	margin: $mg;
+	background: $bg;
+}
+@mixin flex($disp, $fflow, $jc, $ai){
+	display: $disp;
+	flex-flow: $fflow;
+	justify-content: $jc;
+	align-items: $ai;
+}
+@mixin block($wd, $ht, $brdr, $brdr-r, $bgc){
+	width: $wd;
+	height: $ht;
+	border: $brdr;
+	border-radius: $brdr-r;
+	background-color: $bgc;
+}
+@mixin text($ff, $fw, $fs, $lh, $ls, $clr, $wd){
+	font-family: $ff;
+	font-weight: $fw;
+	font-size: $fs;
+	line-height: $lh;
+	letter-spacing: $ls;
+	color: $clr;
+	width: $wd;
+}
+@mixin indent($mg, $pd){
+	margin: $mg;
+	padding: $pd;
+}
+@mixin position($pos, $top, $right, $bottom, $left, $zi){
+	position: $pos;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	z-index: $zi;
+}
+@mixin grid($disp, $gtc, $gtr, $gg){
+	display: $disp;
+	grid-template-columns: $gtc;
+	grid-template-rows: $gtr;
+	grid-gap: $gg;
+}
+
+header{
+	@include page(1455px, 0 auto, #fff);
+	@include indent(none, 38px 0 61px 0);
+	@include flex(flex, column, none, center);
+	.header__nav{
+		@include block(1180px, 41px, none, none, none);
+		@include flex(flex, row, space-between, center);
+		.header__nav__logo-menu{
+			@include block(420px, 41px, none, none, none);
+			@include flex(flex, row, space-between, none);
+			.header__nav__logo-menu__img{
+				@include block(109px, 41px, none, none, none);
+				@include flex(flex, row, none, center);
+			}
+			.header__nav__logo-menu__links ul{
+				@include block(259px, 41px, none, none, none);
+				@include flex(flex, row, space-between, center);
+				a{
+					@include text($ffA, 400, 14px, 17px, none, #4B5563, none);
+					transition: 0.2s;
+				}
+				a:hover{
+					@include text($ffA, 400, 14px, 17px, none, #1C64F2, none);
+					transition: 0.2s;
+				}
+			}
+		}
+		.header__nav__link-button{
+			@include block(224px, 41px, none, none, none);
+			@include flex(flex, row, space-between, center);
+			a{
+				@include text($ffA, 400, 14px, 17px, none, #4B5563, none);
+				transition: 0.2s;
+			}
+			a:hover{
+				@include text($ffA, 400, 14px, 17px, none, #1C64F2, none);
+				transition: 0.2s;
+			}
+			button{
+				@include block(146px, 41px, none, 50px, #1C64F2);
+				transition: 0.2s;
+				p{
+					@include text($ffA, 500, 14px, 17px, none, #fff, none);
+				}
+			}
+			button:hover{
+				@include block(146px, 41px, none, 50px, #111928);
+				cursor: pointer;
+				transition: 0.2s;
+			}
+		}
+	}
+	.header__content{
+		@include position(relative, 0, 0, 0, 0, 1);
+		@include block(835px, 323px, none, none, none);
+		@include flex(flex, column, space-between, center);
+		@include indent(157px 0 0 0, none);
+		.header__content__text{
+			@include block(835px, 243px, none, none, none);
+			@include flex(flex, column, space-between, center);
+			text-align: center;
+			.header__content__text__ttl p{
+				@include text($ffB, 500, 69px, 81px, -0.32px, #111928, none);
+				span{
+					color: #1C64F2;
+				}
+			}
+			.header__content__text__subttl p{
+				@include text($ffA, 400, 17px, 30px, -0.16px, #4B5563, 602px);
+			}
+		}
+		.header__content__buttons{
+			@include block(316px, 41px, none, none, none);
+			@include flex(flex, row, space-between, none);
+			.header__content__buttons__button-A{
+				transition: 0.2s;
+				@include block(154px, 41px, none, 50px, #1C64F2);
+				p{
+					@include text($ffA, 500, 14px, 17px, none, #fff, none);
+				}
+			}
+			.header__content__buttons__button-A:hover{
+				@include block(154px, 41px, none, 50px, #111928);
+				cursor: pointer;
+				transition: 0.2s;
+			}
+			.header__content__buttons__button-B{
+				@include block(143px, 41px, 1px solid #E5E7EB, 50px, #fff);
+				@include flex(flex, row, center, center);
+				transition: 0.2s;
+				p{
+					@include text($ffA, 500, 14px, 17px, none, #4B5563, none);
+					@include indent(0 0 0 10px, 0);
+				}
+			}
+			.header__content__buttons__button-B:hover{
+				@include block(143px, 41px, 0, 50px, #111928);
+				cursor: pointer;
+				transition: 0.2s;
+				p{
+					@include text($ffA, 500, 14px, 17px, none, #fff, none);
+					transition: 0.2s;
+				}
+			}
+		}
+	}
+	.header__marker{
+		@include position(relative, -267px, 0, 0, 203px, 0);
+	}
+	.header__txt{
+		@include text($ffB, 500, 16px, 20px, -0.32px, #111928, none);
+		@include indent(none, 132px 0 0 0);
+	}
+	.header__icons{
+		@include block(1021px, 48px, none, none, none);
+		@include flex(flex, row, space-between, none);
+		@include indent(34px 0 0 0, none);
+		.header__icons__aside-A{
+			@include block(474px, 48px, none, none, none);
+			@include flex(flex, row, space-between, center);
+		}
+		.header__icons__aside-B{
+			@include block(505px, 48px, none, none, none);
+			@include flex(flex, row, space-between, center);
+		}
+	}
+
+	@media (max-width: 390px) {
+		@include indent(none, 23px 0 66px 0);
+		.header__nav{
+			@include block(349px, 41px, none, none, none);
+			.header__nav__logo-menu{
+				@include block(109px, 41px, none, none, none);
+				@include flex(flex, row, none, none);
+				.header__nav__logo-menu__links ul{
+					@include block(0, 0, none, none, none);
+					@include flex(none, none, none, center);
+					a{
+						@include text(none, 0, 0, 0, none, none, none);
+					}
+				}
+			}
+			.header__nav__link-button{
+				@include block(105px, 41px, none, none, none);
+				@include flex(flex, row, center, center);
+				a{
+					@include text(none, 0, 0, 0, none, none, none);
+				}
+				button{
+					@include block(105px, 41px, none, 50px, #1C64F2);
+				}
+			}
+		}
+		.header__content{
+			@include position(none, 0, 0, 0, 0, 1);
+			@include block(350px, 426px, none, none, none);
+			@include indent(134px 0 0 0, none);
+			.header__content__text{
+				@include block(350px, 344px, none, none, none);
+				.header__content__text__ttl p{
+					@include text($ffB, 500, 49px, 57px, -0.48px, #111928, none);
+				}
+				.header__content__text__subttl p{
+					@include text($ffA, 400, 18px, 31px, -0.48px, #4B5563, 350px);
+				}
+			}
+		}
+		.header__marker{
+			@include position(none, 0, 0, 0, 0, 0);
+			visibility: hidden;
+			display: none;
+		}
+		.header__txt{
+			@include indent(none, 147px 0 0 0);
+		}
+		.header__icons{
+			@include block(338px, 208px, none, none, none);
+			@include indent(36px 0 0 0, none);
+			.header__icons__aside-A{
+				@include block(158px, 208px, none, none, none);
+				@include flex(flex, column, space-between, center);
+			}
+			.header__icons__aside-B{
+				@include block(147px, 208px, none, none, none);
+				@include flex(flex, column, space-between, center);
+			}
+		}
+	}
+}
+.books{
+	@include page(1455px, 0 auto, none);
+	background: url(..//img/background.svg) no-repeat;
+	@include flex(flex, column, none, flex-end);
+	.books__text{
+		@include block(865px, 121px, none, none, none);
+		@include flex(flex, column, space-between, center);
+		@include indent(107px 295px 0 0, none);
+		.books__text__ttl p{
+			@include text($ffB, 500, 45px, 81px, -0.32px, #FFFFFF, none);
+		}
+		.books__text__subttl p{
+			@include text($ffA, 400, 17px, 30px, -0.16px, #FFFFFF, none);
+		}
+	}
+	.books__content{
+		@include indent(66px 0 0 0, none);
+		@include block(1319px, 847px, none, none, none);
+		@include flex(flex, row, none, none);
+		.books__content__aside-A{
+			@include block(493px, 528px, none, none, none);
+			@include indent(101px 0 0 0, none);
+			@include flex(flex, column, none, none);
+			.books__content__aside-A__bl-tp-A{
+				@include block(493px, 132px, 1px solid rgba(0, 0, 0, 0), 0, none);
+				@include indent(none, 19px 0 0 22px);
+				transition: 0.2s;
+				.books__content__aside-A__bl-tp-A__ttl-bl{
+					@include block(376px, 39px, none, none, none);
+					@include flex(flex, row, space-between, center);
+					.books__content__aside-A__bl-tp-A__ttl-bl__button{
+						@include block(94px, 39px, none, none, none);
+						@include flex(flex, row, flex-start, center);
+						p{
+							@include text($ffB, 500, 18px, 22px, -0.32px, #fff, none);
+						}
+					}
+					.books__content__aside-A__bl-tp-A__ttl-bl__txt{
+						@include text($ffB, 500, 18px, 22px, -0.32px, rgba(0, 0, 0, 0), none);
+						display: none;
+					}
+				}
+				.books__content__aside-A__bl-tp-A__subttl p{
+					@include text($ffA, 400, 14px, 23px, -0.16px, #fff, 445px);
+					@include indent(3px 0 0 0, none);
+				}
+			}
+			.books__content__aside-A__bl-tp-A:hover{
+				transition: 0.2s;
+				@include block(493px, 132px, 1px solid rgba(255, 255, 255, 0.11), 10px 0px 0px 10px, rgba(255, 255, 255, 0.1));
+			}
+			.books__content__aside-A__bl-tp-B{
+				@include block(493px, 132px, 1px solid rgba(0, 0, 0, 0), none, none);
+				@include indent(none, 27px 26px 25px 22px);
+				transition: 0.2s;
+				@include flex(flex, column, space-between, none);
+				.books__content__aside-A__bl-tp-B__ttl p{
+					@include text($ffB, 500, 18px, 22px, -0.32px, #fff, none);
+				}
+				.books__content__aside-A__bl-tp-B__subttl p{
+					@include text($ffA, 400, 14px, 23px, -0.16px, #fff, none);
+				}
+			}
+			.books__content__aside-A__bl-tp-B:hover{
+				@include block(493px, 132px, 1px solid rgba(255, 255, 255, 0.11), 10px 0px 0px 10px, rgba(255, 255, 255, 0.1));
+				transition: 0.2s;
+			}
+		}
+		.books__content__aside-B{
+			@include block(826px, 730px, none, none, none);
+			background: url(..//img/Screenshot.svg) no-repeat;
+		}
+	}
+
+	@media (max-width: 390px) {
+		background: url(..//img/background2.svg) no-repeat;
+		@include flex(flex, column, none, center);
+		.books__text{
+			@include block(335px, 196px, none, none, none);
+			@include flex(flex, column, space-between, flex-start);
+			@include indent(84px 0 0 0, none);
+			.books__text__ttl p{
+				@include text($ffB, 400, 33px, 41px, -0.32px, #FFFFFF, none);
+			}
+			.books__text__subttl p{
+				@include text($ffA, 400, 17px, 30px, -0.16px, #FFFFFF, 303px);
+			}
+		}
+		.books__content{
+			@include indent(65px 0 0 0, none);
+			@include block(100%, 830px, none, none, none);
+			@include flex(flex, column, none, flex-end);
+			.books__content__aside-A{
+				@include block(390px, 260px, none, none, none);
+				@include indent(0, none);
+				@include flex(flex, row, center, center);
+				.books__content__aside-A__bl-tp-A{
+					@include block(390px, 260px, 1px solid rgba(255, 255, 255, 0.11), 0, rgba(255, 255, 255, 0.1));
+					@include indent(none, 44px 0 68px 19px);
+					.books__content__aside-A__bl-tp-A__ttl-bl{
+						@include block(370px, 39px, none, none, none);
+						@include flex(flex, row, space-between, center);
+						.books__content__aside-A__bl-tp-A__ttl-bl__button{
+							@include block(94px, 39px, none, 100px, #fff);
+							@include flex(flex, row, center, center);
+							p{
+								@include text($ffB, 500, 18px, 22px, -0.32px, #1C64F2, none);
+							}
+						}
+						.books__content__aside-A__bl-tp-A__ttl-bl__txt{
+							@include text($ffB, 500, 18px, 22px, -0.32px, #FFFFFF, none);
+							opacity: 0.6;
+							display: block;
+						}
+						.books__content__aside-A__bl-tp-A__ttl-bl__txt:hover{
+							opacity: 1;
+							transition: 0.2s;
+						}
+					}
+					.books__content__aside-A__bl-tp-A__subttl p{
+						@include text($ffA, 300, 16px, 28px, 0.16px, #fff, 355px);
+						@include indent(25px 0 0 0, none);
+					}
+				}
+				.books__content__aside-A__bl-tp-A:hover{
+					@include block(390px, 260px, 1px solid rgba(255, 255, 255, 0.11), 0, rgba(255, 255, 255, 0.1));
+				}
+				.books__content__aside-A__bl-tp-B{
+					display: none;
+					@include block(0, 0, none, none, none);
+					@include indent(none, 0);
+					@include flex(flex, column, space-between, none);
+					.books__content__aside-A__bl-tp-B__ttl p{
+						@include text(none, 0, 0, 0, 0, none, none);
+					}
+					.books__content__aside-A__bl-tp-B__subttl p{
+						@include text(none, 0, 0, 0, 0, none, none);
+					}
+				}
+			}
+			.books__content__aside-B{
+				@include indent(-29px 0 0 0, 0);
+				@include block(370px, 488px, none, none, none);
+				background: url(..//img/Screenshot2.svg) no-repeat;
+			}
+		}
+	}
+}
+.tasks{
+	@include page(1455px, 0 auto, #fff);
+	@include indent(none, 109px 0 145px 0);
+	@include flex(flex, column, none, center);
+	.tasks__text{
+		@include block(612px, 145px, none, none, none);
+		@include flex(flex, column, space-between, center);
+		text-align: center;
+		.tasks__text__ttl p{
+			@include text($ffB, 400, 38px, 81px, -0.16px, #111928, none);
+		}
+		.tasks__text__subttl p{
+			@include text($ffA, 400, 17px, 30px, -0.16, #4B5563, none);
+		}
+	}
+	.tasks__tabs{
+		@include block(1180px, 240px, none, none, none);
+		@include indent(78px 0 0 0, none);
+		@include grid(grid, repeat(3, 371px), 240px, 35px);
+		.tasks__tabs__card-A{
+			@include flex(flex, column, none, flex-start);
+			.tasks__tabs__card-A__icon{
+				@include block(37px, 37px, none, none, none);
+				background: url(..//img/Frame8.svg);
+			}
+			.tasks__tabs__card-A__txt-A{
+				@include text($ffA, 400, 14px, 30px, -0.16px, #1C64F2, none);
+				@include indent(19px 0 0 0, 0);
+			}
+			.tasks__tabs__card-A__txt-B{
+				@include text($ffB, 400, 20px, 30px, -0.32px, #111928, 360px);
+				@include indent(5px 0 0 0, 0);
+			}
+			.tasks__tabs__card-A__txt-C{
+				@include text($ffB, 400, 14px, 25px, -0.32px, #374151, none);
+				@include indent(14px 0 0 0, 0);
+			}
+		}
+		.tasks__tabs__card-B{
+			@include flex(flex, column, none, flex-start);
+			.tasks__tabs__card-B__icon{
+				@include block(37px, 37px, none, none, none);
+				background: url(..//img/Frame81.svg);
+			}
+			.tasks__tabs__card-B__txt-A{
+				@include text($ffA, 400, 14px, 30px, -0.16px, #9CA3AF, none);
+				@include indent(19px 0 0 0, 0);
+			}
+			.tasks__tabs__card-B__txt-B{
+				@include text($ffB, 400, 20px, 30px, -0.32px, #111928, none);
+				@include indent(5px 0 0 0, 0);
+			}
+			.tasks__tabs__card-B__txt-C{
+				@include text($ffB, 400, 14px, 25px, -0.32px, #374151, none);
+				@include indent(14px 0 0 0, 0);
+			}
+		}
+		.tasks__tabs__card-C{
+			@include flex(flex, column, none, flex-start);
+			.tasks__tabs__card-C__icon{
+				@include block(37px, 37px, none, none, none);
+				background: url(..//img/Frame82.svg);
+			}
+			.tasks__tabs__card-C__txt-A{
+				@include text($ffA, 400, 14px, 30px, -0.16px, #9CA3AF, none);
+				@include indent(19px 0 0 0, 0);
+			}
+			.tasks__tabs__card-C__txt-B{
+				@include text($ffB, 400, 20px, 30px, -0.32px, #111928, none);
+				@include indent(5px 0 0 0, 0);
+			}
+			.tasks__tabs__card-C__txt-C{
+				@include text($ffB, 400, 14px, 25px, -0.32px, #374151, none);
+				@include indent(14px 0 0 0, 0);
+			}	
+		}
+	}
+	.tasks__table{
+		@include block(1180px, 540px, 1px solid #D0D5DF, 30px, #E2E8F0);
+		@include indent(57px 0 0 0, 56px 0 0 58px);
+		@include flex(flex, row, space-between, none);
+		.tasks__table__img-A{
+			@include block(868px, 452px, none, none, none);
+			background: url(..//img/profit-loss.svg);
+		}
+		.tasks__table__img-B{
+			@include block(254px, 452px, none, none, none);
+			background: url(..//img/inventory.svg);
+		}
+	}
+
+	@media (max-width: 390px) {
+		@include indent(none, 86px 0 58px 0);
+		.tasks__text{
+			@include block(354px, 196px, none, none, none);
+			@include flex(flex, column, space-between, flex-start);
+			text-align: left;
+			.tasks__text__ttl p{
+				@include text($ffB, 400, 33px, 41px, -0.32px, #111928, 335px);
+			}
+		}
+		.tasks__tabs{
+			@include block(345px, 825px, none, none, none);
+			@include indent(80px 0 0 0, none);
+			@include grid(grid, 345px, repeat(3, 240px), 0);
+			@include flex(flex, column, space-between, none);
+			.tasks__tabs__card-A{
+				.tasks__tabs__card-A__txt-C{
+					@include text($ffB, 400, 14px, 25px, -0.16px, #374151, none);
+					@include indent(14px 0 0 0, 0);
+				}
+			}
+			.tasks__tabs__card-B{
+				.tasks__tabs__card-B__txt-A{
+					@include text($ffA, 400, 14px, 30px, -0.16px, #1C64F2, none);
+					@include indent(19px 0 0 0, 0);
+				}
+				.tasks__tabs__card-B__icon{
+					@include block(37px, 37px, none, none, none);
+					background: url(..//img/Frame83.svg);
+				}
+				.tasks__tabs__card-B__txt-C{
+					@include text($ffB, 400, 14px, 25px, -0.16px, #374151, none);
+					@include indent(14px 0 0 0, 0);
+				}
+			}
+			.tasks__tabs__card-C{
+				.tasks__tabs__card-C__icon{
+					@include block(37px, 37px, none, none, none);
+					background: url(..//img/Frame84.svg);
+				}
+				.tasks__tabs__card-C__txt-A{
+					@include text($ffA, 400, 14px, 30px, -0.16px, #1C64F2, none);
+					@include indent(19px 0 0 0, 0);
+				}
+				.tasks__tabs__card-C__txt-C{
+					@include text($ffB, 400, 14px, 25px, -0.16px, #374151, none);
+					@include indent(14px 0 0 0, 0);
+				}	
+			}	
+		}
+		.tasks__table{
+			@include block(100%, 436px, none, 0, #E2E8F0);
+			@include indent(70px 0 0 0, 0);
+			@include flex(flex, row, flex-end, none);
+			.tasks__table__img-A{
+				@include block(370px, 428px, none, none, none);
+				background: url(..//img/profit-loss2.svg);
+				@include indent(-28px 0 0 0, 0);
+			}
+			.tasks__table__img-B{
+				@include block(0, 0, none, none, none);
+				background: url(..//img/inventory.svg);
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+}
+.soft{
+	@include page(1455px, 0 auto, none);
+	background: url(..//img/background-features.svg) no-repeat;
+	@include flex(flex, row, center, none);
+	.soft__block{
+		@include block(498px, 346px, none, none, none);
+		@include indent(110px 0 0 0, none);
+		.soft__block__inner{
+			@include block(498px, 224px, none, none, none);
+			@include flex(flex, column, space-between, center);
+			.soft__block__inner__txt{
+				@include block(498px, 145px, none, none, none);
+				@include flex(flex, column, space-between, center);
+				text-align: center;
+				.soft__block__inner__txt__ttl p{
+					@include text($ffB, 400, 38px, 81px, -0.16px, #fff, none);
+				}
+				.soft__block__inner__txt__subttl p{
+					@include text($ffA, 400, 17px, 30px, -0.16px, #fff, none);
+				}
+			}
+			button{
+				transition: 0.2s;
+				@include block(155px, 41px, none, 50px, #fff);
+				p{
+					@include text($ffA, 600, 14px, 17px, none, #111928, none);
+				}
+			}
+			button:hover{
+				@include block(155px, 41px, none, 50px, #111928);
+				transition: 0.2s;
+				cursor: pointer;
+				p{
+					@include text($ffA, 600, 14px, 17px, none, #fff, none);
+					transition: 0.2s;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 390px) {
+		background: url(..//img/background-features2.svg) no-repeat;
+		.soft__block{
+			@include block(354px, 380px, none, none, none);
+			@include indent(108px 0 0 0, none);
+			.soft__block__inner{
+				@include block(354px, 254px, none, none, none);
+				.soft__block__inner__txt{
+					@include block(354px, 170px, none, none, none);
+					.soft__block__inner__txt__ttl p{
+						@include text($ffB, 400, 31px, 81px, -0.16px, #fff, none);
+					}
+				}
+			}
+		}	
+	}
+}
+.reviews{
+	@include page(1455px, 0 auto, #fff);
+	@include indent(none, 117px 0 116px 0);
+	@include flex(flex, column, none, center);
+	.reviews__text{
+		@include block(640px, 145px, none, none, none);
+		@include flex(flex, column, space-between, center);
+		text-align: center;
+		.reviews__text__ttl p{
+			@include text($ffB, 400, 38px, 81px, -0.16px, #111928, none);
+		}
+		.reviews__text__subttl p{
+			@include text($ffA, 400, 17px, 30px, -0.16px, #4B5563, none);
+		}	
+	}
+	.reviews__content{
+		@include indent(77px 0 0 0, none);
+		@include block(1180px, 643px, none, none, none);
+		@include flex(flex, row, space-between, none);
+		.reviews__content__col-A{
+			@include block(372px, 580px, none, none, none);
+			@include flex(flex, column, space-between, none);
+			.reviews__content__card-A{
+				@include block(372px, 243px, none, 10px, #fff);
+				@include indent(none, 22px 0);
+				@include flex(flex, column, space-between, center);
+				box-shadow: $b-sh;
+				transition: 0.2s;
+				.reviews__content__card-A__txt{
+					@include text($ffA, 400, 17px, 30px, -0.16px, #374151, 330px);
+				}
+				.reviews__content__card-A__line{
+					@include block(327px, 1px, none, none, #F3F4F6);
+				}
+				.reviews__content__card-A__info{
+					@include block(327px, 56px, none, none, none);
+					@include flex(flex, row, space-between, center);
+					.reviews__content__card-A__info__txt{
+						@include block(171px, 51px, none, none, none);
+						@include flex(flex, column, space-between, none);
+						.reviews__content__card-A__info__txt__ttl p{
+							@include text($ffB, 500, 16px, 20px, -0.32px, #111928, none);
+						}
+						.reviews__content__card-A__info__txt__subttl p{
+							@include text($ffA, 400, 14px, 25px, -0.16px, #9CA3AF, none);
+						}
+					}
+				}
+			}
+			.reviews__content__card-A:hover{
+				transform: scale(1.2);
+				transition: 0.2s;
+				background-color: #ffe;
+			}
+			.reviews__content__card-B{
+				@include block(372px, 304px, none, 10px, #fff);
+				@include indent(none, 22px 0);
+				@include flex(flex, column, space-between, center);
+				box-shadow: $b-sh;
+				transition: 0.2s;
+				.reviews__content__card-B__txt{
+					@include text($ffA, 400, 17px, 31px, -0.16px, #374151, 330px);
+				}
+				.reviews__content__card-B__line{
+					@include block(327px, 1px, none, none, #F3F4F6);
+				}
+				.reviews__content__card-B__info{
+					@include block(327px, 56px, none, none, none);
+					@include flex(flex, row, space-between, center);
+					.reviews__content__card-B__info__txt{
+						@include block(192px, 51px, none, none, none);
+						@include flex(flex, column, space-between, none);
+						.reviews__content__card-B__info__txt__ttl p{
+							@include text($ffB, 500, 16px, 20px, -0.32px, #111928, none);
+						}
+						.reviews__content__card-B__info__txt__subttl p{
+							@include text($ffA, 400, 14px, 25px, -0.16px, #9CA3AF, none);
+						}
+					}
+				}
+			}
+			.reviews__content__card-B:hover{
+				transform: scale(1.2);
+				transition: 0.2s;
+				background-color: #ffe;
+			}
+		}
+		.reviews__content__col-B{
+			@include block(372px, 643px, none, none, none);
+			@include flex(flex, column, space-between, none);
+			.reviews__content__card-C{
+				@include block(372px, 334px, none, 10px, #fff);
+				@include indent(none, 22px 0);
+				@include flex(flex, column, space-between, center);
+				box-shadow: $b-sh;
+				transition: 0.2s;
+				.reviews__content__card-C__txt{
+					@include text($ffA, 400, 17px, 31px, -0.16px, #374151, 330px);
+				}
+				.reviews__content__card-C__line{
+					@include block(327px, 1px, none, none, #F3F4F6);
+				}
+				.reviews__content__card-C__info{
+					@include block(327px, 56px, none, none, none);
+					@include flex(flex, row, space-between, center);
+					.reviews__content__card-C__info__txt{
+						@include block(176px, 51px, none, none, none);
+						@include flex(flex, column, space-between, none);
+						.reviews__content__card-C__info__txt__ttl p{
+							@include text($ffB, 500, 16px, 20px, -0.32px, #111928, none);
+						}
+						.reviews__content__card-C__info__txt__subttl p{
+							@include text($ffA, 400, 14px, 25px, -0.16px, #9CA3AF, none);
+						}
+					}
+				}
+			}
+			.reviews__content__card-C:hover{
+				transform: scale(1.2);
+				transition: 0.2s;
+				background-color: #ffe;
+			}
+			.reviews__content__card-D{
+				@include block(372px, 281px, none, 10px, #fff);
+				@include indent(none, 22px 0);
+				@include flex(flex, column, space-between, center);
+				box-shadow: $b-sh;
+				transition: 0.2s;
+				.reviews__content__card-D__txt{
+					@include text($ffA, 400, 17px, 31px, -0.16px, #374151, 330px);
+				}
+				.reviews__content__card-D__line{
+					@include block(327px, 1px, none, none, #F3F4F6);
+				}
+				.reviews__content__card-D__info{
+					@include block(327px, 56px, none, none, none);
+					@include flex(flex, row, space-between, center);
+					.reviews__content__card-D__info__txt{
+						@include block(143px, 51px, none, none, none);
+						@include flex(flex, column, space-between, none);
+						.reviews__content__card-D__info__txt__ttl p{
+							@include text($ffB, 500, 16px, 20px, -0.32px, #111928, none);
+						}
+						.reviews__content__card-D__info__txt__subttl p{
+							@include text($ffA, 400, 14px, 25px, -0.16px, #9CA3AF, none);
+						}
+					}
+				}
+			}
+			.reviews__content__card-D:hover{
+				transform: scale(1.2);
+				transition: 0.2s;
+				background-color: #ffe;
+			}
+		}
+		.reviews__content__col-C{
+			@include block(372px, 580px, none, none, none);
+			@include flex(flex, column, space-between, none);
+			.reviews__content__card-E{
+				@include block(372px, 276px, none, 10px, #fff);
+				@include indent(none, 22px 0);
+				@include flex(flex, column, space-between, center);
+				box-shadow: $b-sh;
+				transition: 0.2s;
+				.reviews__content__card-E__txt{
+					@include text($ffA, 400, 17px, 31px, -0.16px, #374151, 330px);
+				}
+				.reviews__content__card-E__line{
+					@include block(327px, 1px, none, none, #F3F4F6);
+				}
+				.reviews__content__card-E__info{
+					@include block(327px, 56px, none, none, none);
+					@include flex(flex, row, space-between, center);
+					.reviews__content__card-E__info__txt{
+						@include block(130px, 51px, none, none, none);
+						@include flex(flex, column, space-between, none);
+						.reviews__content__card-E__info__txt__ttl p{
+							@include text($ffB, 500, 16px, 20px, -0.32px, #111928, none);
+						}
+						.reviews__content__card-E__info__txt__subttl p{
+							@include text($ffA, 400, 14px, 25px, -0.16px, #9CA3AF, none);
+						}
+					}
+				}
+			}
+			.reviews__content__card-E:hover{
+				transform: scale(1.2);
+				transition: 0.2s;
+				background-color: #ffe;
+			}
+			.reviews__content__card-F{
+				@include block(372px, 276px, none, 10px, #fff);
+				@include indent(none, 22px 0);
+				@include flex(flex, column, space-between, center);
+				box-shadow: $b-sh;
+				transition: 0.2s;
+				.reviews__content__card-F__txt{
+					@include text($ffA, 400, 17px, 31px, -0.16px, #374151, 330px);
+				}
+				.reviews__content__card-F__line{
+					@include block(327px, 1px, none, none, #F3F4F6);
+				}
+				.reviews__content__card-F__info{
+					@include block(327px, 56px, none, none, none);
+					@include flex(flex, row, space-between, center);
+					.reviews__content__card-F__info__txt{
+						@include block(192px, 51px, none, none, none);
+						@include flex(flex, column, space-between, none);
+						.reviews__content__card-F__info__txt__ttl p{
+							@include text($ffB, 500, 16px, 20px, -0.32px, #111928, none);
+						}
+						.reviews__content__card-F__info__txt__subttl p{
+							@include text($ffA, 400, 14px, 25px, -0.16px, #9CA3AF, none);
+						}
+					}
+				}
+			}
+			.reviews__content__card-F:hover{
+				transform: scale(1.2);
+				transition: 0.2s;
+				background-color: #ffe;
+			}
+		}
+	}
+
+	@media (max-width: 390px) {
+		@include indent(none, 88px 0 92px 0);
+		.reviews__text{
+			@include block(354px, 221px, none, none, none);
+			@include flex(flex, column, space-between, flex-start);
+			text-align: left;
+			.reviews__text__ttl p{
+				@include text($ffB, 400, 33px, 41px, -0.32px, #111928, 335px);
+			}
+			.reviews__text__subttl p{
+				@include text($ffA, 400, 17px, 30px, -0.16px, #111928, none);
+			}	
+		}
+		.reviews__content{
+			@include indent(67px 0 0 0, none);
+			@include block(350px, 1890px, none, none, none);
+			@include flex(flex, column, space-between, none);
+			.reviews__content__col-A{
+				@include block(350px, 619px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				.reviews__content__card-A{
+					@include block(350px, 280px, none, 10px, #fff);
+					@include indent(none, 22px 0);
+					@include flex(flex, column, space-between, center);
+					box-shadow: $b-sh;
+					.reviews__content__card-A__txt{
+						@include text($ffA, 400, 17px, 31px, -0.16px, #374151, 298px);
+					}
+					.reviews__content__card-A__line{
+						@include block(327px, 1px, none, none, #F3F4F6);
+					}
+					.reviews__content__card-A__info{
+						@include block(305px, 56px, none, none, none);
+						@include flex(flex, row, space-between, center);
+						.reviews__content__card-A__info__txt{
+							@include block(117px, 51px, none, none, none);
+							@include flex(flex, column, space-between, none);
+							.reviews__content__card-A__info__txt__ttl p{
+								@include text($ffB, 500, 16px, 20px, -0.32px, #111928, none);
+							}
+							.reviews__content__card-A__info__txt__subttl p{
+								@include text($ffA, 400, 14px, 25px, -0.16px, #9CA3AF, none);
+							}
+						}
+					}
+				}
+				.reviews__content__card-A:hover{
+					transform: scale(1);
+				}
+				.reviews__content__card-B{
+					@include block(350px, 315px, none, 10px, #fff);
+					@include indent(none, 22px 0);
+					@include flex(flex, column, space-between, center);
+					box-shadow: $b-sh;
+					.reviews__content__card-B__txt{
+						@include text($ffA, 400, 17px, 31px, -0.16px, #374151, 298px);
+					}
+					.reviews__content__card-B__line{
+						@include block(327px, 1px, none, none, #F3F4F6);
+					}
+					.reviews__content__card-B__info{
+						@include block(305px, 56px, none, none, none);
+						@include flex(flex, row, space-between, center);
+						.reviews__content__card-B__info__txt{
+							@include block(192px, 51px, none, none, none);
+							@include flex(flex, column, space-between, none);
+							.reviews__content__card-B__info__txt__ttl p{
+								@include text($ffB, 500, 16px, 20px, -0.32px, #111928, none);
+							}
+							.reviews__content__card-B__info__txt__subttl p{
+								@include text($ffA, 400, 14px, 25px, -0.16px, #9CA3AF, none);
+							}
+						}
+					}
+				}
+				.reviews__content__card-B:hover{
+					transform: scale(1);
+				}
+			}
+			.reviews__content__col-B{
+				@include block(350px, 643px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				.reviews__content__card-C{
+					@include block(350px, 342px, none, 10px, #fff);
+					@include indent(none, 22px 0);
+					@include flex(flex, column, space-between, center);
+					box-shadow: $b-sh;
+					.reviews__content__card-C__txt{
+						@include text($ffA, 400, 17px, 31px, -0.16px, #374151, 298px);
+					}
+					.reviews__content__card-C__line{
+						@include block(327px, 1px, none, none, #F3F4F6);
+					}
+					.reviews__content__card-C__info{
+						@include block(305px, 56px, none, none, none);
+						@include flex(flex, row, space-between, center);
+						.reviews__content__card-C__info__txt{
+							@include block(176px, 51px, none, none, none);
+							@include flex(flex, column, space-between, none);
+							.reviews__content__card-C__info__txt__ttl p{
+								@include text($ffB, 500, 16px, 20px, -0.32px, #111928, none);
+							}
+							.reviews__content__card-C__info__txt__subttl p{
+								@include text($ffA, 400, 14px, 25px, -0.16px, #9CA3AF, none);
+							}
+						}
+					}
+				}
+				.reviews__content__card-C:hover{
+					transform: scale(1);
+				}
+				.reviews__content__card-D{
+					@include block(350px, 281px, none, 10px, #fff);
+					@include indent(none, 22px 0);
+					@include flex(flex, column, space-between, center);
+					box-shadow: $b-sh;
+					.reviews__content__card-D__txt{
+						@include text($ffA, 400, 17px, 31px, -0.16px, #374151, 298px);
+					}
+					.reviews__content__card-D__line{
+						@include block(327px, 1px, none, none, #F3F4F6);
+					}
+					.reviews__content__card-D__info{
+						@include block(305px, 56px, none, none, none);
+						@include flex(flex, row, space-between, center);
+						.reviews__content__card-D__info__txt{
+							@include block(143px, 51px, none, none, none);
+							@include flex(flex, column, space-between, none);
+							.reviews__content__card-D__info__txt__ttl p{
+								@include text($ffB, 500, 16px, 20px, -0.32px, #111928, none);
+							}
+							.reviews__content__card-D__info__txt__subttl p{
+								@include text($ffA, 400, 14px, 25px, -0.16px, #9CA3AF, none);
+							}
+						}
+					}
+				}
+				.reviews__content__card-D:hover{
+					transform: scale(1);
+				}
+			}
+			.reviews__content__col-C{
+				@include block(350px, 580px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				.reviews__content__card-E{
+					@include block(350px, 276px, none, 10px, #fff);
+					@include indent(none, 22px 0);
+					@include flex(flex, column, space-between, center);
+					box-shadow: $b-sh;
+					.reviews__content__card-E__txt{
+						@include text($ffA, 400, 17px, 31px, -0.16px, #374151, 298px);
+					}
+					.reviews__content__card-E__line{
+						@include block(327px, 1px, none, none, #F3F4F6);
+					}
+					.reviews__content__card-E__info{
+						@include block(305px, 56px, none, none, none);
+						@include flex(flex, row, space-between, center);
+						.reviews__content__card-E__info__txt{
+							@include block(130px, 51px, none, none, none);
+							@include flex(flex, column, space-between, none);
+							.reviews__content__card-E__info__txt__ttl p{
+								@include text($ffB, 500, 16px, 20px, -0.32px, #111928, none);
+							}
+							.reviews__content__card-E__info__txt__subttl p{
+								@include text($ffA, 400, 14px, 25px, -0.16px, #9CA3AF, none);
+							}
+						}
+					}
+				}
+				.reviews__content__card-E:hover{
+					transform: scale(1);
+				}
+				.reviews__content__card-F{
+					@include block(350px, 276px, none, 10px, #fff);
+					@include indent(none, 22px 0);
+					@include flex(flex, column, space-between, center);
+					box-shadow: $b-sh;
+					.reviews__content__card-F__txt{
+						@include text($ffA, 400, 17px, 31px, -0.16px, #374151, 298px);
+					}
+					.reviews__content__card-F__line{
+						@include block(327px, 1px, none, none, #F3F4F6);
+					}
+					.reviews__content__card-F__info{
+						@include block(305px, 56px, none, none, none);
+						@include flex(flex, row, space-between, center);
+						.reviews__content__card-F__info__txt{
+							@include block(192px, 51px, none, none, none);
+							@include flex(flex, column, space-between, none);
+							.reviews__content__card-F__info__txt__ttl p{
+								@include text($ffB, 500, 16px, 20px, -0.32px, #111928, none);
+							}
+							.reviews__content__card-F__info__txt__subttl p{
+								@include text($ffA, 400, 14px, 25px, -0.16px, #9CA3AF, none);
+							}
+						}
+					}
+				}
+				.reviews__content__card-F:hover{
+					transform: scale(1);
+				}
+			}
+		}
+	}
+}
+.pricing{
+	@include page(1455px, 0 auto, #10172A);
+	@include indent(none, 111px 0 122px 0);
+	@include flex(flex, column, none, center);
+	.pricing__text{
+		@include block(640px, 116px, none, none, none);
+		@include flex(flex, column, space-between, center);
+		@include position(relative, 0, 0, 0, 0, 1);
+		.pricing__text__ttl p{
+			@include text($ffB, 400, 38px, 81px, -0.32px, #fff, none);
+		}
+		.pricing__text__subttl p{
+			@include text($ffA, 400, 17px, 30px, -0.16px, #fff, none);
+			opacity: 0.6;
+		}
+	}
+	.pricing__marker{
+		@include block(281px, 40px, none, none, none);
+		background: url(..//img/Marker1.svg) no-repeat;
+		@include position(relative, -85px, 0, 0, -126px, 0);
+	}
+	.pricing__content{
+		@include block(1180px, 572px, none, none, none);
+		@include flex(flex, row, space-between, none);
+		@include indent(22px 0 0 0, none);
+		.pricing__content__card-A{
+			@include block(370px, 572px, none, 20px, none);
+			@include indent(none, 30px);
+			transition: 0.2s;
+			.pricing__content__card-A__bl-A{
+				@include block(310px, 239px, none, none, none);
+				@include flex(flex, column, none, none);
+				.pricing__content__card-A__bl-A__price p{
+					@include text($ffB, 400, 45px, 56px, -0.16px, #fff, none);
+				}
+				.pricing__content__card-A__bl-A__ttl p{
+					@include indent(22px 0 0 0, none);
+					@include text($ffB, 500, 18px, 22px, -0.48px, #fff, none);
+				}
+				.pricing__content__card-A__bl-A__subttl p{
+					@include indent(11px 0 0 0, none);
+					@include text($ffA, 400, 15px, 29px, 0.32px, #fff, 310px);
+					opacity: 0.6;
+				}	
+				button{
+					@include block(310px, 41px, 1px solid rgba(255, 255, 255, 0.2), 50px, rgba(0, 0, 0, 0));
+					@include indent(28px 0 0 0, none);
+					p{
+						@include text($ffA, 600, 14px, 17px, none, #fff, none);
+					}
+				}
+			}
+			.pricing__content__card-A__bl-B{
+				@include indent(34px 0 0 0, none);
+				@include block(271px, 170px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				.pricing__content__card-A__bl-B__bl{
+					@include block(271px, 30px, none, none, none);
+					@include flex(flex, row, none, center);
+					.pricing__content__card-A__bl-B__bl__bl-img{
+						@include block(38px, 30px, none, none, none);
+						@include flex(flex, row, none, center);
+						.pricing__content__card-A__bl-B__bl__bl-img-inner{
+							@include block(24px, 24px, none, none, none);
+						}
+					}
+					.pricing__content__card-A__bl-B__bl__txt p{
+						@include text($ffA, 400, 14px, 30px, -0.16px, #fff, none);
+					}
+				}
+			}
+		}
+		.pricing__content__card-A:hover{
+			@include block(370px, 572px, none, 20px, #1C64F2);
+			transition: 0.2s;
+			.pricing__content__card-A__bl-A{
+				.pricing__content__card-A__bl-A__subttl p{
+					opacity: 1;
+				}
+				button{
+					@include block(310px, 41px, 0, 50px, #fff);
+					cursor: pointer;
+					p{
+						@include text($ffA, 600, 14px, 17px, none, #111928, none);
+					}
+				}
+			}
+		}
+		.pricing__content__card-B{
+			@include block(370px, 572px, none, 20px, none);
+			@include indent(none, 30px);
+			transition: 0.2s;
+			.pricing__content__card-B__bl-A{
+				@include block(310px, 239px, none, none, none);
+				@include flex(flex, column, none, none);
+				.pricing__content__card-B__bl-A__price p{
+					@include text($ffB, 400, 45px, 56px, -0.16px, #fff, none);
+				}
+				.pricing__content__card-B__bl-A__ttl p{
+					@include indent(22px 0 0 0, none);
+					@include text($ffB, 500, 18px, 22px, -0.48px, #fff, none);
+				}
+				.pricing__content__card-B__bl-A__subttl p{
+					@include indent(11px 0 0 0, none);
+					@include text($ffA, 400, 15px, 29px, 0.32px, #fff, 238px);
+					opacity: 0.6;
+				}
+				button{
+					@include block(310px, 41px, 1px solid rgba(255, 255, 255, 0.2), 50px, rgba(0, 0, 0, 0));
+					@include indent(28px 0 0 0, none);
+					p{
+						@include text($ffA, 600, 14px, 17px, none, #fff, none);
+					}
+				}
+			}
+			.pricing__content__card-B__bl-B{
+				@include indent(34px 0 0 0, none);
+				@include block(271px, 240px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				.pricing__content__card-B__bl-B__bl{
+					@include block(271px, 30px, none, none, none);
+					@include flex(flex, row, none, center);
+					.pricing__content__card-B__bl-B__bl__img{
+						@include block(38px, 30px, none, none, none);
+						@include flex(flex, row, none, center);
+						.pricing__content__card-B__bl-B__bl__img-inner{
+							@include block(24px, 24px, none, none, none);
+						}
+					}
+					.pricing__content__card-B__bl-B__bl__txt p{
+						@include text($ffA, 400, 14px, 30px, -0.16px, #fff, none);
+					}
+				}
+			}
+		}
+		.pricing__content__card-B:hover{
+			@include block(370px, 572px, none, 20px, #1C64F2);
+			transition: 0.2s;
+			.pricing__content__card-B__bl-A{
+				.pricing__content__card-B__bl-A__subttl p{
+					opacity: 1;
+				}
+				button{
+					@include block(310px, 41px, 0, 50px, #fff);
+					cursor: pointer;
+					p{
+						@include text($ffA, 600, 14px, 17px, none, #111928, none);
+					}
+				}
+			}
+		}
+		.pricing__content__card-C{
+			@include block(370px, 572px, none, 20px, none);
+			@include indent(none, 30px);
+			transition: 0.2s;
+			.pricing__content__card-C__bl-A{
+				@include block(310px, 239px, none, none, none);
+				@include flex(flex, column, none, none);
+				.pricing__content__card-C__bl-A__price p{
+					@include text($ffB, 400, 45px, 56px, -0.16px, #fff, none);
+				}
+				.pricing__content__card-C__bl-A__ttl p{
+					@include indent(22px 0 0 0, none);
+					@include text($ffB, 500, 18px, 22px, -0.48px, #fff, none);
+				}
+				.pricing__content__card-C__bl-A__subttl p{
+					@include indent(11px 0 0 0, none);
+					@include text($ffA, 400, 15px, 29px, 0.32px, #fff, 238px);
+					opacity: 0.6;
+				}	
+				button{
+					@include block(310px, 41px, 1px solid rgba(255, 255, 255, 0.2), 50px, rgba(0, 0, 0, 0));
+					@include indent(28px 0 0 0, none);
+					p{
+						@include text($ffA, 600, 14px, 17px, none, #fff, none);
+					}
+				}
+			}
+			.pricing__content__card-C__bl-B{
+				@include indent(34px 0 0 0, none);
+				@include block(310px, 170px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				.pricing__content__card-C__bl-B__bl{
+					@include block(310px, 30px, none, none, none);
+					@include flex(flex, row, none, center);
+					.pricing__content__card-C__bl-B__bl__bl-img{
+						@include block(38px, 30px, none, none, none);
+						@include flex(flex, row, none, center);
+						.pricing__content__card-C__bl-B__bl__bl-img-inner{
+							@include block(24px, 24px, none, none, none);
+						}
+					}
+					.pricing__content__card-C__bl-B__bl__txt p{
+						@include text($ffA, 400, 14px, 30px, -0.16px, #fff, none);
+					}
+				}
+			}
+		}
+		.pricing__content__card-C:hover{
+			@include block(370px, 572px, none, 20px, #1C64F2);
+			transition: 0.2s;
+			.pricing__content__card-C__bl-A{
+				.pricing__content__card-C__bl-A__subttl p{
+					opacity: 1;
+				}
+				button{
+					@include block(310px, 41px, 0, 50px, #fff);
+					cursor: pointer;
+					p{
+						@include text($ffA, 600, 14px, 17px, none, #111928, none);
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 390px) {
+		@include indent(none, 86px 0 27px 0);
+		.pricing__text{
+			@include block(354px, 164px, none, none, none);
+			@include flex(flex, column, space-between, flex-start);
+			.pricing__text__ttl p{
+				@include text($ffB, 400, 33px, 41px, -0.32px, #fff, 335px);
+			}
+		}
+		.pricing__marker{
+			@include block(244px, 31px, none, none, none);
+			background: url(..//img/Marker3.svg) no-repeat;
+			@include position(relative, -142px, 0, 0, -52px, 0);
+		}
+		.pricing__content{
+			@include block(370px, 1578px, none, none, none);
+			@include flex(flex, column, space-between, none);
+			@include indent(21px 0 0 0, none);
+		}
+	}
+}
+footer{
+	@include page(1455px, 0 auto, none);
+	background: url(..//img/background-faqs.svg) no-repeat;
+	@include flex(flex, column, none, center);
+	.footer__info{
+		@include block(1177px, 656px, none, none, none);
+		@include flex(flex, column, space-between, none);
+		@include indent(112px 0 0 0, none);
+		.footer__info__txt{
+			@include block(640px, 145px, none, none, none);
+			@include flex(flex, column, space-between, none);
+			.footer__info__txt__ttl p{
+				@include text($ffB, 400, 38px, 81px, -0.16px, #111928, none);
+			}
+			.footer__info__txt__subttl p{
+				@include text($ffA, 400, 17px, 30px, -0.16px, #4B5563, none);
+			}
+		}
+		.footer__info__cont{
+			@include block(1177px, 452px, none, none, none);
+			@include flex(flex, row, space-between, none);
+			.indent{
+				@include indent(none, 7px 0);
+				@include flex(flex, column, space-between, none);
+				.footer__info__cont__block__ttl p{
+					@include text($ffB, 500, 18px, 22px, -0.48px, #111928, none);
+				}
+				.footer__info__cont__block__subttl p{
+					@include text($ffA, 400, 14px, 25px, -0.16px, #374151, none);
+				}
+			}
+			.footer__info__cont__col-A{
+				@include block(370px, 346px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				.footer__info__cont__col-A__block-A{
+					@include block(370px, 102px, none, none, none);
+				}
+				.footer__info__cont__col-A__block-B{
+					@include block(370px, 104px, none, none, none);
+				}
+				.footer__info__cont__col-A__block-C{
+					@include block(370px, 102px, none, none, none);
+				}
+			}
+			.footer__info__cont__col-B{
+				@include block(389px, 452px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				.footer__info__cont__col-B__block-A{
+					@include block(367px, 129px, none, none, none);
+				}
+				.footer__info__cont__col-B__block-B{
+					@include block(388px, 129px, none, none, none);
+				}
+				.footer__info__cont__col-B__block-C{
+					@include block(378px, 154px, none, none, none);
+				}
+			}
+			.footer__info__cont__col-C{
+				@include block(367px, 393px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				.footer__info__cont__col-C__block-A{
+					@include block(367px, 129px, none, none, none);
+				}
+				.footer__info__cont__col-C__block-B{
+					@include block(367px, 79px, none, none, none);
+				}
+				.footer__info__cont__col-C__block-C{
+					@include block(367px, 152px, none, none, none);
+				}
+			}
+		}
+	}
+	.footer__footer{
+		@include block(1181px, 337px, none, none, none);
+		@include indent(173px 0 0 0, none);
+		@include flex(flex, column, none, center);
+		.footer__footer__menu ul{
+			@include block(259px, 17px, none, none, none);
+			@include flex(flex, row, space-between, center);
+			@include indent(41px 0 0 0, none);
+			a{
+				@include text($ffA, 400, 14px, 17px, none, #4B5563, none);
+				transition: 0.2s;
+			}
+			a:hover{
+				@include text($ffA, 400, 14px, 17px, none, #1C64F2, none);
+				transition: 0.2s;
+			}
+		}
+		.footer__footer__line{
+			@include block(1180px, 1px, none, none, #E5E7EB);
+			@include indent(67px 0 0 0, none);
+		}
+		.footer__footer__line__socials{
+			@include indent(40px 0 0 0, none);
+			@include block(1181px, 19.54px, none, none, none);
+			@include flex(flex, row, space-between, center);
+			.footer__footer__line__socials__txt p{
+				@include text($ffA, 400, 14px, 17px, none, #4B5563, none);
+			}
+			.footer__footer__line__socials__icons{
+				@include block(67px, 19.54px, none, none, none);
+				@include flex(flex, row, space-between, center);
+				.footer__footer__line__socials__icons__twit{
+					@include block(20px, 16.25px, none, none, none);
+				}
+				.footer__footer__line__socials__icons__git{
+					@include block(20px, 19.54px, none, none, none);
+				}
+			}
+		}
+	}
+
+	@media (max-width: 390px) {
+		background: url(..//img/background-faqs2.svg) no-repeat;
+		.footer__info{
+			@include block(355px, 1558px, none, none, none);
+			@include indent(82px 0 0 0, none);
+			.footer__info__txt{
+				@include block(355px, 191px, none, none, none);
+				.footer__info__txt__ttl p{
+					@include text($ffB, 400, 33px, 41px, -0.32px, #111928, none);
+				}
+				.footer__info__txt__subttl p{
+					@include text($ffA, 400, 17px, 30px, -0.16px, #111928, none);
+				}
+			}
+			.footer__info__cont{
+				@include block(350px, 1306px, none, none, none);
+				@include flex(flex, column, space-between, none);
+				.footer__info__cont__col-A{
+					@include block(350px, 377px, none, none, none);
+					@include flex(flex, column, space-between, none);
+					.footer__info__cont__col-A__block-A{
+						@include block(350px, 102px, none, none, none);
+					}
+					.footer__info__cont__col-A__block-B{
+						@include block(350px, 104px, none, none, none);
+					}
+					.footer__info__cont__col-A__block-C{
+						@include block(350px, 127px, none, none, none);
+					}
+				}
+				.footer__info__cont__col-B{
+					@include block(350px, 481px, none, none, none);
+					@include flex(flex, column, space-between, none);
+					.footer__info__cont__col-B__block-A{
+						@include block(350px, 129px, none, none, none);
+					}
+					.footer__info__cont__col-B__block-B{
+						@include block(350px, 154px, none, none, none);
+					}
+					.footer__info__cont__col-B__block-C{
+						@include block(350px, 154px, none, none, none);
+					}
+				}
+				.footer__info__cont__col-C{
+					@include block(350px, 404px, none, none, none);
+					@include flex(flex, column, space-between, none);
+					.footer__info__cont__col-C__block-A{
+						@include block(350px, 129px, none, none, none);
+					}
+					.footer__info__cont__col-C__block-B{
+						@include block(350px, 79px, none, none, none);
+					}
+					.footer__info__cont__col-C__block-C{
+						@include block(350px, 152px, none, none, none);
+					}
+				}
+			}
+		}
+		.footer__footer{
+			@include block(299px, 321px, none, none, none);
+			@include indent(137px 0 0 0, none);
+			.footer__footer__line{
+				@include block(0, 0, none, none, rgba(0,0,0,0));
+				@include indent(0, none);
+			}
+			.footer__footer__line__socials{
+				@include indent(126px 0 0 0, none);
+				@include block(299px, 56px, none, none, none);
+				@include flex(flex, column-reverse, space-between, center);
+			}
+		}
+	}
+}

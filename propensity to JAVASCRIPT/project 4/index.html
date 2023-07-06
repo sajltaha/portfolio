@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+        }
+        .creater{
+            display: flex;
+            flex-flow: column;
+            width: 100px;
+            height: 100px;
+            justify-content: space-between;
+        }
+        .results{
+            margin: 50px 0 0 0;
+            display: flex;
+            flex-flow: column;
+        }
+        .results__block{
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="creater">
+        <input type="text" name="" id="" class="creater__num-one">
+        <input type="text" name="" id="" class="creater__num-two">
+        <select class="creater__selector" name="" id="">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <button class="creater__add">Add</button>
+    </div>
+    <div class="results">
+        <!-- <div class="results__block">
+            <input type="text" class="results__block__inp">
+            <button class="results__block__btn">Delete</button>
+        </div> -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
