@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-function existOne() {
+function usersDB() {
     fs.access('users/users.json', fs.constants.R_OK, (err, data) => {
         if (err) {
             fs.writeFile('users/users.json', '{}', () => {
@@ -20,5 +20,5 @@ function existOne() {
 }
 
 module.exports = {
-    existOne: existOne
+    usersDB: usersDB
 }

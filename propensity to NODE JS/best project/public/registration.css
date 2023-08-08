@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 30px 0 0 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.register__block {
+    width: 763px;
+    height: 560px;
+    background: #D9D9D9;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.signin__block {
+    width: 241px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.signin__alert {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.login__alert {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.signin__block p {
+    color: #2B2730;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.signin__username {
+    width: 100%;
+    height: 37px;
+    outline: none;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.25);
+    padding: 8px;
+    color: #2B2730;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.signin__password {
+    width: 100%;
+    height: 37px;
+    outline: none;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.25);
+    padding: 8px;
+    color: #2B2730;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.signin__block button {
+    width: 100%;
+    height: 37px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background: #000;
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.25);
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.signin__block button:hover {
+    background: #454545;
+    transition: 0.2s;
+}
+
+.line {
+    width: 1px;
+    height: 400px;
+    background: #000;
+}
+
+.login__block {
+    width: 241px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.login__block p {
+    color: #2B2730;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.login__username {
+    width: 100%;
+    height: 37px;
+    outline: none;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.25);
+    padding: 8px;
+    color: #2B2730;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.login__password {
+    width: 100%;
+    height: 37px;
+    outline: none;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.25);
+    padding: 8px;
+    color: #2B2730;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.login__block button {
+    width: 100%;
+    height: 37px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background: #000;
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.25);
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login__block button:hover {
+    background: #454545;
+    transition: 0.2s;
+}
